@@ -24,7 +24,8 @@ class UserForm
             TextInput::make('email')
             ->label('Email address')
             ->email()
-            ->required(),
+            ->required() // Make it required for new records
+            ->hiddenOn('edit'),
             TextInput::make('username')
             ->default(null),
             TextInput::make('displayname')
