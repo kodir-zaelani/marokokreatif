@@ -35,9 +35,9 @@ return new class extends Migration
             $table->text('maps')->nullable();
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();
-            $table->text('bg_header')->nullable();
-            $table->text('bg_statistic')->nullable();
-            $table->text('logo_menu')->nullable();
+            $table->string('bg_header')->nullable();
+            $table->string('bg_statistic')->nullable();
+            $table->string('logo_menu')->nullable();
             $table->tinyInteger('fresh_site')->nullable();
             $table->boolean('status_site_update')->default(true);
             $table->timestamps();
