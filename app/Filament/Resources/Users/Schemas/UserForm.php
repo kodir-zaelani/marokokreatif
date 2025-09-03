@@ -14,39 +14,44 @@ class UserForm
     public static function configure(Schema $schema): Schema
     {
         return $schema
-            ->components([
-                TextInput::make('name')
-                    ->required(),
-                TextInput::make('slug')
-                    ->required(),
-                TextInput::make('email')
-                    ->label('Email address')
-                    ->email()
-                    ->required(),
-                TextInput::make('username')
-                    ->default(null),
-                TextInput::make('displayname')
-                    ->default(null),
-                TextInput::make('phone')
-                    ->tel()
-                    ->default(null),
-                DateTimePicker::make('email_verified_at'),
-                TextInput::make('password')
-                    ->password()
-                    ->required(),
-                TextInput::make('current_team_id')
-                    ->default(null),
-                TextInput::make('profile_photo_path')
-                    ->default(null),
-                Textarea::make('bio')
-                    ->default(null)
-                    ->columnSpanFull(),
-                FileUpload::make('image')
-                    ->image(),
-                Toggle::make('status')
-                    ->required(),
-                Toggle::make('masterstatus')
-                    ->required(),
-            ]);
+        ->components([
+            FileUpload::make('image')
+            ->columnSpanFull()
+            ->image(),
+            TextInput::make('name')
+            ->required(),
+            TextInput::make('email')
+            ->label('Email address')
+            ->email()
+            ->required(),
+            TextInput::make('username')
+            ->default(null),
+            TextInput::make('displayname')
+            ->default(null),
+            TextInput::make('phone')
+            ->tel()
+            ->default(null),
+            TextInput::make('password')
+            ->password()
+            ->helperText('Minimum 8 characters')
+            ->required() // Make it required for new records
+            ->minLength(9) // Make it required for new records
+            ->maxLength(255) // Make it required for new records
+            ->hiddenOn('edit'),
+            CheckboxList::make('roles')
+            ->label('Role')
+            ->required()
+            ->columnSpanFull()
+            ->columns(5)
+            ->relationship(titleAttribute: 'name'),
+            Textarea::make('bio')
+            ->default(null)
+            ->columnSpanFull(),
+            
+            Toggle::make('status')
+            ->required(),
+            Toggle::make('masterstatus')
+            ->required(),
+        ]);
     }
 }
