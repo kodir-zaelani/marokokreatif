@@ -2,12 +2,13 @@
 
 namespace App\Filament\Resources\Users\Schemas;
 
-use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\CheckboxList;
+use Filament\Forms\Components\DateTimePicker;
 
 class UserForm
 {
@@ -47,7 +48,6 @@ class UserForm
             Textarea::make('bio')
             ->default(null)
             ->columnSpanFull(),
-            
             Toggle::make('status')
             ->required(),
             Toggle::make('masterstatus')
