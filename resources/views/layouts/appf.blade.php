@@ -53,8 +53,8 @@
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
 
-            <a class="px-3 btn-getstarted ms-5 me-2"  href="#">Sign In</a>
-            <a class="btn btn-primary " href="#">Sign Up</a>
+            <a class="px-3 btn-getstarted ms-5 me-2"  href="{{ route('login')}}">Sign In</a>
+            {{-- <a class="btn btn-primary " href="#">Sign Up</a> --}}
 
         </div>
     </header>
