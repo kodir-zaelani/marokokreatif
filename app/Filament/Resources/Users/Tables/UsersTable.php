@@ -19,12 +19,9 @@ class UsersTable
     {
         return $table
             ->columns([
-                TextColumn::make('id')
-                    ->label('ID')
-                    ->searchable(),
+                ImageColumn::make('image')
+                ->circular(),
                 TextColumn::make('name')
-                    ->searchable(),
-                TextColumn::make('slug')
                     ->searchable(),
                 TextColumn::make('email')
                     ->label('Email address')
@@ -35,14 +32,10 @@ class UsersTable
                     ->searchable(),
                 TextColumn::make('phone')
                     ->searchable(),
-                TextColumn::make('email_verified_at')
-                    ->dateTime()
-                    ->sortable(),
                 TextColumn::make('current_team_id')
                     ->searchable(),
                 TextColumn::make('profile_photo_path')
                     ->searchable(),
-                ImageColumn::make('image'),
                 IconColumn::make('status')
                     ->boolean(),
                 IconColumn::make('masterstatus')
