@@ -44,7 +44,7 @@ class UserForm
             ->label('Role')
             ->required()
             ->columnSpanFull()
-            ->columns(8)
+            ->columns(5)
             ->relationship(titleAttribute: 'name'),
             Textarea::make('bio')
             ->default(null)
