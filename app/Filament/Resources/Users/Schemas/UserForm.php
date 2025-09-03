@@ -37,14 +37,14 @@ class UserForm
             ->password()
             ->helperText('Minimum 8 characters')
             ->required() // Make it required for new records
-            ->minLength(9) // Make it required for new records
+            ->minLength(8) // Make it required for new records
             ->maxLength(255) // Make it required for new records
             ->hiddenOn('edit'),
             CheckboxList::make('roles')
             ->label('Role')
             ->required()
             ->columnSpanFull()
-            ->columns(5)
+            ->columns(8)
             ->relationship(titleAttribute: 'name'),
             Textarea::make('bio')
             ->default(null)
