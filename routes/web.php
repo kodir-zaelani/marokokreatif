@@ -5,7 +5,7 @@ use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index'])->name('root');
+Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index'])->name('home');
 
 
 
