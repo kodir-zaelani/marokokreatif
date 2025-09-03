@@ -50,8 +50,6 @@ class UserForm
             ->columnSpanFull(),
             Toggle::make('status')
             ->required(),
-            Toggle::make('masterstatus')
-            ->required(),
         ]);
     }
 }
