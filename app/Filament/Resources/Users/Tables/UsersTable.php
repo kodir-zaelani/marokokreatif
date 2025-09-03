@@ -26,19 +26,9 @@ class UsersTable
                 TextColumn::make('email')
                     ->label('Email address')
                     ->searchable(),
-                TextColumn::make('username')
-                    ->searchable(),
-                TextColumn::make('displayname')
-                    ->searchable(),
                 TextColumn::make('phone')
                     ->searchable(),
-                TextColumn::make('current_team_id')
-                    ->searchable(),
-                TextColumn::make('profile_photo_path')
-                    ->searchable(),
                 IconColumn::make('status')
-                    ->boolean(),
-                IconColumn::make('masterstatus')
                     ->boolean(),
                 TextColumn::make('created_at')
                     ->dateTime()
