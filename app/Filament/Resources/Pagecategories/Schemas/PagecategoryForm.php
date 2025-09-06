@@ -13,15 +13,10 @@ class PagecategoryForm
     {
         return $schema
             ->components([
-                TextInput::make('title')
-                    ->required(),
-                TextInput::make('slug')
-                    ->required(),
                 FileUpload::make('image')
+                ->columnSpanFull()
                     ->image(),
-                Toggle::make('masterstatus')
-                    ->required(),
-                Toggle::make('status')
+                TextInput::make('title')
                     ->required(),
             ]);
     }
