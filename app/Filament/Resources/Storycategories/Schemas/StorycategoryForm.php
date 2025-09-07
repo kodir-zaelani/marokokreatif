@@ -1,23 +1,27 @@
 <?php
 
-namespace App\Filament\Resources\Pagecategories\Schemas;
+namespace App\Filament\Resources\Storycategories\Schemas;
 
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 
-class PagecategoryForm
+class StorycategoryForm
 {
     public static function configure(Schema $schema): Schema
     {
         return $schema
             ->components([
-                FileUpload::make('image')
-                ->columnSpanFull()
-                ->directory('images/pagecategories')
-                    ->image(),
                 TextInput::make('title')
+                    ->required(),
+                TextInput::make('slug')
+                    ->required(),
+                FileUpload::make('image')
+                    ->image(),
+                Toggle::make('masterstatus')
+                    ->required(),
+                Toggle::make('status')
                     ->required(),
             ]);
     }
